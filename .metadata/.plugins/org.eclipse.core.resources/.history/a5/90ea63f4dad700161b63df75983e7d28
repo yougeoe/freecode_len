@@ -61,14 +61,7 @@
 </div> 
 <script language="javascript">
 $(document).ready(function(){
-		//示例化野狗远程数据库
-		var config = {
-				sysncURL:"https://yougeoe-prdt-1.wilddogio.com"
-		};
-		wilddog.initializeApp(config);
-		var ref = wilddog.sync().ref();
-		var arr = [];
-		
+	
 		$(".s_btn").click(function(){
 			if($("#s_text").val()==""){
 				alert("你还没输入内容呢，你不说点什么吗");
@@ -78,7 +71,6 @@ $(document).ready(function(){
 				var arr=[];
 				var text=$("#s_text").val();
 				arr.push(text);
-				ref.set(arr);
 				var show_text=$("<span class=\"show_message\"></div>");
 				show_text.text(text);
 				$(".show_message").append(show_text);

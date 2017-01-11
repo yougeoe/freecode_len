@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
 <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous" language="javascript"></script>
-<script src="https://cdn.wilddog.com/sdk/js/2.4.2/wilddog.js"></script>
 
 </head>
 <body>
@@ -61,14 +60,7 @@
 </div> 
 <script language="javascript">
 $(document).ready(function(){
-		//示例化野狗远程数据库
-		var config = {
-				sysncURL:"https://yougeoe-prdt-1.wilddogio.com"
-		};
-		wilddog.initializeApp(config);
-		var ref = wilddog.sync().ref();
-		var arr = [];
-		
+	
 		$(".s_btn").click(function(){
 			if($("#s_text").val()==""){
 				alert("你还没输入内容呢，你不说点什么吗");
@@ -78,7 +70,6 @@ $(document).ready(function(){
 				var arr=[];
 				var text=$("#s_text").val();
 				arr.push(text);
-				ref.set(arr);
 				var show_text=$("<span class=\"show_message\"></div>");
 				show_text.text(text);
 				$(".show_message").append(show_text);
