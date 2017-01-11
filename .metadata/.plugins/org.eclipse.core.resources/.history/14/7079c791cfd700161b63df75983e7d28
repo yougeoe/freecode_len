@@ -85,7 +85,6 @@ $(document).ready(function(){
 		});
 		$(".btn-block").click(function(){
 			alert("感谢您的点赞");
-			console.log("点赞")
 		});
 		//获取随进颜色
 		function getRandomColor(){
