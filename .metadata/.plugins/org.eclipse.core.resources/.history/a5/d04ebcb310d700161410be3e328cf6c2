@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./css/my.css" type="text/css"> 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</head>
+<body>
+<script type="text/javascript">
+$("#s_btn").click(function(){
+	console.log("saying something");
+});
+$("#del_btn").click(function(){
+	console.log("clear");
+});
+</script>
+<div>
+ 	<div><p class="text-primary"> 弹幕墙展示</p></div>
+ 	<!-- 弹幕墙 -->	
+	<div class="show_screen">
+		<div class="show_message">
+			<!-- 这里append添加弹幕元素
+			     <span>这里是弹幕</span>
+			 -->
+		</div>
+	</div>
+	<!-- 输入、发送、清屏 -->
+	<div class="contrl">
+		<div class="row">
+		<input type="text" placeholder="随便说点什么吧" >
+		<button class="btn btn-primary text-primary" id="s_btn">发送</button>
+		<button class="btn btn-primary" id="del_btn">清屏</button>		
+		</div>
+	</div>
+</div>
+</body>
+</html>

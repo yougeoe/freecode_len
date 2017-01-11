@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style/animated.min.css" type="text/css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<style>
+body{
+	background-color: black;
+}
+h2{
+	font-family: Lobster,monospace;
+}
+
+.red-text{
+	color:red;
+}
+ .thick-green-border {
+    border-color: green;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 25%;
+  }
+
+  .smaller-image {
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+<script>
+$(document).ready(function({
+	<!-- 
+	$("button").addClass("animated bounce"); //动画 反弹
+	$(".well").addClass("animated shake")	 //动画 摇
+	$("#target3").addClass("animated fadeOut"); //动画 渐隐
+	-->
+	$("button").removeClass("btn-default");
+	$("button").addClass("btn-primary");
+});
+</script>
+<!-- Only change code above this line. -->
+<h2 class="text-primary text-center" id="red-text">Only change code above this line</h2>
+<a href="#"><img class="smaller-image thick-green-border" src="./images/13.jpg"></a>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="well" id="left-well">
+				<button class="btn btn-default target" id="target1" disabled="true">target1</button>
+				<button class="btn btn-default target" id="target2">target2</button>
+				<button class="btn btn-default target" id="target3">target3</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="well" id="right-well">
+				<button class="btn btn-default target" id="target4">target4</button>
+				<button class="btn btn-default target" id="target5">target5</button>
+				<button class="btn btn-default target" id="target6">target6</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+<a href="javascript:;" onClick="easemob.bind({
+	tenantId:'298',
+});"></a>
+</div>
+<script>
+window.easemobim = window.easemobim || {};
+easemobim.config = {
+    //访客信息，以下参数支持变量
+    tenantId:'298',
+    to:'user5',
+    appKey:'ebpangyong#chatapp',
+    domain:'//kefu.easemob.com',
+    path:'//localhost:8080/MCHDemo/kefu-webim-plugin_43.12',
+    staticPath:'//localhost:8080/MCHDemo/kefu-webim-plugin_43.12/static',
+    visitor: {         
+        trueName: '黎小冷',
+        qq: '567**34',
+        phone: '188****8888',
+        companyName: '环信',
+        userNickname: '我是黎小冷',
+        description: '描述信息',
+        email: '123456@**.com'
+    },
+};
+</script>
+<script src='/MCHDemo/kefu-webim-plugin_43.12/easemob.js'></script>
+
+</body>
+</html>

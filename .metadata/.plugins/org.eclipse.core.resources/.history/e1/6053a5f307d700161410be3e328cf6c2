@@ -1,0 +1,23 @@
+html,body{
+	margin:0px;
+	padding:0px;
+	width:95%;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:"Î¢ÈíÑÅºÚ , Lobster,monospace";
+	background:""#ccc
+}
+
+.show_screen .show_message{
+	width:100%;
+	height:500px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	background:#ccc;
+}
+.contrl{
+	
+	text-align: center;
+}

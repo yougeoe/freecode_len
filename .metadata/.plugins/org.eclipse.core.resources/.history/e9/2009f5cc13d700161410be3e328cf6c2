@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./css/my.css" type="text/css"> 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+</head>
+<body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log("good");	
+
+$("#s_btn").click(function(){
+	console.log("saying something");
+});
+$("#del_btn").click(function(){
+	console.log("clear");
+});
+//获取随进颜色
+function getRandomColor(){
+          return '#' + (function(h){
+              return new Array(7 - h.length).join("0") + h
+          })((Math.random() * 0x1000000 << 0).toString(16));
+      }
+});
+</script>
+<div>
+ 	<div><p class="text-primary"> 弹幕墙展示</p></div>
+ 	<!-- 弹幕墙 -->	
+	<div class="show_screen">
+		<div class="show_message">
+			<!-- 这里append添加弹幕元素
+			     <span>这里是弹幕</span>
+			 -->
+		</div>
+	</div>
+	<!-- 输入、发送、清屏 -->
+	<div class="contrl">
+		<div class="row">
+		<input type="text" placeholder="随便说点什么吧" >
+		<button class="btn btn-primary text-primary" id="s_btn">发送</button>
+		<button class="btn btn-primary" id="del_btn">清屏</button>		
+		</div>
+	</div>
+</div>
+<hr>
+<div class="footer">
+<div id="showtimes">
+    <div id="time">
+        <script>
+            document.getElementById('time').innerHTML = new Date()
+                    .toLocaleString()
+                    + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());
+            setInterval(
+                    "document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",
+                    1000);
+        </script>
+    </div>
+</div>
+<button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> 喜欢我，你不点一个吗？</button>
+
+
+  <div class="text-center">
+  <a href="#">关于potatoes</a>||
+  <a href="#">free code camp</a>||
+  <a href="#">帮助中心</a>||
+  <a href="#">联系我们</a>
+   </div>
+  <p class="text-primary text-center">版权所有copyright &copy; by potatoes 2017-01-03</p>
+  
+</div> 
+
+</body>
+</html>

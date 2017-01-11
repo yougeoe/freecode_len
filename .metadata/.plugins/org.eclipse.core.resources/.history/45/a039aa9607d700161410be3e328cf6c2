@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />  
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style/animated.min.css" type="text/css"> 
+<link rel="stylesheet" href="./css/my.css" type="text/css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+
+</head>
+<body>
+
+<div>
+ 	<!-- 弹幕墙 -->
+ 	
+	<div class="show_screen">
+		<div class="show_message">
+			<!-- 这里append添加弹幕元素 -->
+		</div>
+	
+	</div>
+	<!-- 输入、发射、清屏 -->
+	<div class="contrl">
+		<div class="row">
+		<input type="text" placeholder="随便说点什么吧" >
+		<button class="btn btn-primary" id="s_btn">发射</button>
+		<button class="btn btn-primary" id="del_btn">清屏</button>		
+		</div>
+	</div>
+</div>
+</body>
+</html>

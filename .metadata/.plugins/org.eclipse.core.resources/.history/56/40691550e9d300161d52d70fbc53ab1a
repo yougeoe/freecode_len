@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+window.easemobim = window.easemobim || {};
+easemobim.config = {
+    //访客信息，以下参数支持变量
+    
+    visitor: {         
+        trueName: '黎小冷',
+        qq: '567**34',
+        phone: '188****8888',
+        companyName: '环信',
+        userNickname: '我是黎小冷',
+        description: '描述信息',
+        email: '123456@**.com'
+    },
+};
+</script>
+<script src='//kf.114hunan.cn/webim/easemob.js?tenantId=33999&hide=false&sat=false&xmppServer=im-api.114hunan.cn&restServer=a1.114hunan.cn
+' async='async'></script>
+	
+</body>
+</html>

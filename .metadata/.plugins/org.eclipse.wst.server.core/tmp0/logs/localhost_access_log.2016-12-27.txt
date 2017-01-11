@@ -1,0 +1,12 @@
+127.0.0.1 - - [27/Dec/2016:14:28:30 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:31 +0800] "GET /MCHDemo/ HTTP/1.1" 200 2032
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:31 +0800] "GET /MCHDemo/style/animated.min.css HTTP/1.1" 404 1054
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:31 +0800] "GET /MCHDemo/images/13.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:40 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 200 635
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:49 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 200 635
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:28:49 +0800] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:30:13 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:30:29 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 200 635
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:30:45 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:14:30:54 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 200 635
+0:0:0:0:0:0:0:1 - - [27/Dec/2016:15:37:45 +0800] "GET /MCHDemo/kfdemo.html HTTP/1.1" 200 641
