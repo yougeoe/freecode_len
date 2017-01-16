@@ -31,8 +31,8 @@
 		<input class="text-default" type="text" id="s_text" placeholder="随便说点什么吧" >
 		<input type="button" class="s_btn btn btn-default text-primary" id="s_btn" value="发送">
 		<button class="del_btn btn btn-default" id="del_btn">清屏</button>
-		
-        <audio id="286530000406970376" class="hide" src="blob:http://a1.ssy.im.laolai.net/laolai/chat/chatfiles/7fc42a2f-5a26-491d-aab9-e00ddac59417">Your browser does not support the audio tag.</audio>	
+		<audio id="286530000406970376" class="hide" src="blob:http://a1.ssy.im.laolai.net/laolai/chat/chatfiles/7fc42a2f-5a26-491d-aab9-e00ddac59417"></audio>
+				
 		</div>
 	</div>
 </div>
