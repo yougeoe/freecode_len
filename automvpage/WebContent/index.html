@@ -6,9 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />  
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css"/>
+<link  href="style/animate.min.css" rel="stylesheet" type="text/css"  />
 <link rel="stylesheet" href="./css/my.css" type="text/css"> 
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
-<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous" language="javascript"></script>
 <script src="https://cdn.wilddog.com/sdk/js/2.4.2/wilddog.js"></script>
 
@@ -32,8 +33,7 @@
 		<input type="button" class="s_btn btn btn-default text-primary" id="s_btn" value="发送">
 		<button class="del_btn btn btn-default" id="del_btn">清屏</button>
 		
-        <audio id="286530000406970376" class="hide" src="blob:http://a1.ssy.im.laolai.net/laolai/chat/chatfiles/7fc42a2f-5a26-491d-aab9-e00ddac59417">Your browser does not support the audio tag.</audio>	
-		</div>
+        </div>
 	</div>
 </div>
 <hr>
@@ -65,7 +65,7 @@
 $(document).ready(function(){
 		//示例化野狗远程数据库
 		var config = {
-				sysncURL:"https://yougeoe-prdt-1.wilddogio.com"
+				syncURL:"https://yougeoe-prdt-1.wilddogio.com",
 		};
 		wilddog.initializeApp(config);
 		var ref = wilddog.sync().ref();
@@ -77,18 +77,59 @@ $(document).ready(function(){
 				return;
 			}
 			else{
-				var arr=[];
-				var text=$("#s_text").val();
-				arr.push(text);
-				ref.set(arr);
-				var show_text=$("<span class=\"show_message\"></div>");
-				show_text.text(text);
-				$(".show_message").append(show_text);
-				$("#s_text").val('');
+				var text=$("#s_text").val();				
+				ref.child('message2').push(text);
+				
+				console.log("数据同步");
+			
+				
 				console.log("saying something");
 			}
 					
 		});
+		
+		ref.child('message2').on('child_added',function(snapshot){
+			var text = snapshot.val();
+			arr.push(text);
+			var textObj = $("<div class=\"show_message1\"></div");
+	                textObj.text(text);
+			$(".show_message").append(textObj);
+			$("#s_text").val('');
+			moveObj(textObj);
+		});
+		
+		var topMin = $(".show_screen").offset().top;  //获取显示框据顶部距离
+		var topMax = topMin+ $(".show_screen").height(); //获取显示框底部距顶部距离
+		var _top = topMin;  //每个滚动消息距顶部距离
+		var moveObj = function(obj){
+			var _left = $('.show_screen').width()-obj.width();
+			_top = _top+50;
+			if(_top>(topMax - 50)){
+				_top = topMin;
+			}
+			obj.css({
+				left:_left,
+				top:_top,
+				color:getRandomColor()
+			})
+			var time = 50000+ 10000*(Math.random());
+			obj.animate({left: "-"+_left+"px"},time,function(){
+				obj.remove();
+			});
+		}
+		
+		
+		//每3s随机取一条播放
+		var getAndRun = function() {
+			if (arr.length > 0) {
+				var n = Math.floor(Math.random() * arr.length + 1) - 1;
+				var textObj = $("<div>" + arr[n] + "</div>");
+				$(".show_message").append(textObj);
+				moveObj(textObj);
+			}
+			setTimeout(getAndRun, 10000);
+		}
+		
 		$(".del_btn").click(function(){
 			$(".show_message").empty();
 			console.log("clear");

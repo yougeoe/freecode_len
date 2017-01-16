@@ -1,0 +1,78 @@
+package kfservlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class kefuServlet
+ */
+@WebServlet("/kefuServlet")
+public class kefuServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public kefuServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+        response.setContentType("text/html;charset=UTF-8");  
+        String acceptjson = "";  
+        try {  
+            BufferedReader br = new BufferedReader(new InputStreamReader(  
+                    (ServletInputStream) request.getInputStream(), "utf-8"));  
+            StringBuffer sb = new StringBuffer("");  
+            String temp;  
+            while ((temp = br.readLine()) != null) {  
+                sb.append(temp);  
+            }  
+            br.close();  
+            acceptjson = sb.toString();  
+            if (acceptjson != "") {  
+                JSONObject jo = JSONObject.fromObject(acceptjson);  
+                JSONArray imgArray = jo.getJSONArray("PartsImages");  
+                JSONArray infArray = jo.getJSONArray("BasicInfo");  
+                for (int i = 0; i < imgArray.size(); i++) {  
+                    JSONObject imgObject = JSONObject.fromObject(imgArray  
+                            .get(i));  
+                    System.out.println(imgObject.get("PartsImg"));  
+                }  
+                JSONObject infObject = JSONObject.fromObject(infArray.get(0));  
+                System.out.println(infObject.get("Parts_cate"));  
+                System.out.println(infObject.get("Company"));  
+                System.out.println(infObject.get("Parts_name"));  
+                System.out.println(infObject.get("TEL"));  
+                System.out.println(infObject.get("Parts_price"));  
+                System.out.println(infObject.get("Suitable"));  
+                System.out.println(infObject.get("UsedStyle"));  
+                System.out.println(infObject.get("Supplement"));  
+                System.out.println(jo.toString());  
+            }  
+            response.getWriter().write(MyReadFile.read("/post/publishsuccess"));  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            response.getWriter().write(MyReadFile.read("/post/publishfailure"));  
+        }  
+	}
+
+}
